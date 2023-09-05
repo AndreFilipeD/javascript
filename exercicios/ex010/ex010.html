@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setimo JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1> Condições </h1>
+    </header>
+    <article>
+        <h2>Sistema de multas</h2>
+        <input type="number" id="txtvel" name="txtvel"> Km/h<br><br>
+        <input type="submit" value="Verificar" onclick="clicar()">
+        <div id="res">Aguardando Verificação</div>
+    </article>
+    <footer>
+        <p>Pagina criada por <a href="https://github.com/AndreFilipeD" target="_blank">André</a> para treino de JavaScript</p>
+    </footer>
+    <script>
+        function clicar(){
+            var n1 = window.document.getElementById('txtvel')
+            n1 = Number(n1.value)
+            if(n1 > 70) {
+                window.document.getElementById('res').innerText = n1 +'Km/h multado'
+            } else {
+                window.document.getElementById('res').innerText = n1 +'Km/h Está dentro do Limite de velocidade.'
+            }
+        }
+    </script>
+</body>
+</html>
