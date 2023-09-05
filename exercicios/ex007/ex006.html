@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sexto JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="this">PLACEHOLDER</h1>
+    </header>
+    <article>
+        <h2>Teste de Interação</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero aspernatur corrupti aut iste ipsam mollitia blanditiis nam minus reprehenderit, aperiam, laudantium cupiditate veniam neque illo, tempore dolores eveniet officiis amet.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, sapiente repudiandae est praesentium dolorum explicabo soluta veritatis quos quae aliquid beatae nemo dolore at, tenetur odio odit nihil ducimus autem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quod mollitia, placeat id officiis architecto, aliquid dolore fugit earum libero praesentium sequi maiores laudantium deserunt. Reprehenderit at est sint magnam!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint quisquam voluptatum amet quidem eaque recusandae labore molestias dicta ut provident laborum omnis nesciunt, minima cupiditate rerum quam maxime vero ipsa?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit totam, maxime, ab, officiis aliquid voluptatum vel ducimus accusantium magnam doloremque eum neque impedit illum expedita libero voluptas accusamus molestiae est.
+        </p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero aspernatur corrupti aut iste ipsam mollitia blanditiis nam minus reprehenderit, aperiam, laudantium cupiditate veniam neque illo, tempore dolores eveniet officiis amet.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, sapiente repudiandae est praesentium dolorum explicabo soluta veritatis quos quae aliquid beatae nemo dolore at, tenetur odio odit nihil ducimus autem.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quod mollitia.Reprehenderit at est sint magnam!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint quisquam voluptatum amet quidem eaque recusandae labore molestias dicta ut provident laborum omnis nesciunt, minima cupiditate rerum quam maxime vero ipsa?
+        </p>
+        <h2>Botão feito em JavaScript, interaja com ele:</h2>
+        <div id="btn">
+            Interaja
+        </div>
+    </article>
+    <footer>
+        <p>Pagina criada por <a href="https://github.com/AndreFilipeD" target="_blank">André</a> para treino de JavaScript</p>
+    </footer>
+    <script>
+        var a = window.document.getElementById('btn')
+
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        function clicar () {
+            a.innerText = 'Clicou'
+            a.style.backgroundColor = 'red'
+        }
+        function entrar () {
+            a.innerText = 'Entrou'
+            a.style.backgroundColor = 'purple'
+        }
+        function sair () {
+            a.innerText = 'Saiu'
+            a.style.backgroundColor = 'green'
+        }
+    </script>
+</body>
+</html>
