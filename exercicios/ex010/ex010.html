@@ -3,30 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Setimo JavaScript</title>
+    <title>Condicionais JavaScript</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1> Condições </h1>
+        <h1> Condições em JavaScript</h1>
     </header>
     <article>
+        <h2>Que dia é hoje?</h2>
+        <input type="submit" value="Descobrir" name="desc" id="desc" onclick="descobrir()">
+        <div id="data">Aguardando Descoberta</div>
+    </article>
+    <article>
         <h2>Sistema de multas</h2>
-        <input type="number" id="txtvel" name="txtvel"> Km/h<br><br>
-        <input type="submit" value="Verificar" onclick="clicar()">
+        <p>Digite sua velocidade atual</p>
+        <input type="number" id="txtvel" name="txtvel" value="0"> Km/h<br><br>
+        <input type="submit" value="Verificar velocidade" onclick="clicar()">
         <div id="res">Aguardando Verificação</div>
     </article>
+    <article>
+        <h2>Identificador de região</h2>
+        <p>Digite seu país de origem</p>
+        <input type="text" name="txtid" id="txtid" value="Brasil"> > 
+        <input type="submit" value="Identificar região" onclick="identificar()">
+        <div id="idenres">Aguardando Identificação</div>
+    </article>
+    <article>
+        <h2>Descobrindo sua idade</h2>
+        <p>Digite o ano em que nasceu</p>
+        <input type="number" name='valnum' id="valnum" value="1969"><br><br>
+        <p>Digite o ano em que estamos</p>
+        <input type="number" name="atual" id="atual" value = 2023>
+        <input type="submit" value="Calcular idade" onclick="calcular()">
+        <div id="calres">Aguardando Calculo</div>
+    </article>
     <footer>
-        <p>Pagina criada por <a href="https://github.com/AndreFilipeD" target="_blank">André</a> para treino de JavaScript</p>
+        <p>Exercícios realizados por <a href="https://github.com/AndreFilipeD" target="_blank">André</a> como treino de JavaScript</p>
     </footer>
     <script>
+        function descobrir(){
+            var dat = new Date()
+            var day = dat.getDay()
+            var j = window.document.querySelector('div#data')
+            j.innerText = 'Hoje é'
+            switch(day){
+                case 0:
+                    j.innerText += ' Domingo'
+                    break
+                case 1:
+                    j.innerText += ' Segunda - Feira'
+                    break
+                case 2:
+                    j.innerText += ' Terça - Feira'
+                    break
+                case 3:
+                    j.innerText += ' Quarta - Feira'
+                    break
+                case 4:
+                    j.innerText += ' Quinta - Feira'
+                    break
+                case 5:
+                    j.innerText += ' Sexta - Feira'
+                    break
+                case 6:
+                    j.innerText += ' Sabado'
+                    break
+                    default:
+                    j.innerText += '[ERRO] Não foi possivel encontrar o dia'
+                    break
+            }
+        }
         function clicar(){
             var n1 = window.document.getElementById('txtvel')
             n1 = Number(n1.value)
             if(n1 > 70) {
-                window.document.getElementById('res').innerText = n1 +'Km/h multado'
+                window.document.getElementById('res').innerText = n1 +'Km/h Você foi multado'
             } else {
-                window.document.getElementById('res').innerText = n1 +'Km/h Está dentro do Limite de velocidade.'
+                window.document.getElementById('res').innerText = n1 +'Km/h Você está dentro do Limite de velocidade.'
+            }
+        }
+        function identificar(){
+            var n2 = window.document.querySelector('input#txtid')
+            var txt = window.document.querySelector('div#idenres')
+            if (n2.value.toUpperCase() == 'BRASIL'){
+                txt.innerText = 'Você foi identificado como Brasileiro'
+            } else {
+                txt.innerText = 'Você foi identificado como Estrangeiro'
+            }
+        }
+        function calcular(){
+            var n3 = Number(window.document.querySelector("input#valnum").value)
+            var n4 = Number(window.document.querySelector("input#atual").value)
+            var f = window.document.querySelector('div#calres')
+            var i = n4 -n3
+            f.innerText = 'Você tem entre ' + (i - 1) + ' e ' + i + ' Anos,'
+            if(i<16){
+                f.innerText += ' e você não vota.'
+            } else if (i<18){
+                f.innerText += ' e possui voto opcional.'
+            } else if (i<65){
+                f.innerText += ' e tem voto obrigatório!'
+            } else if (i>100){
+                f.innerText += ' você ainda está vivo??? tem voto opcional..'
             }
         }
     </script>

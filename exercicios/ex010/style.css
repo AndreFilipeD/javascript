@@ -7,18 +7,19 @@
     background-color: rgb(197, 197, 197);
 }
 header{
-    background-color: rgb(121, 72, 0);
+    background-image: linear-gradient(to bottom, rgb(0, 96, 221), rgb(0, 23, 138));
     padding:40px 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.267);
-    border-bottom: 2px solid rgb(88, 53, 0);
+    border-bottom: 2px solid rgb(0, 0, 0);
 }
 h1{
     color: rgb(255, 255, 255);
     background-color: transparent;
+    text-shadow: 2px 2px 4px black;
 }
 article{
     max-width: 600px;
-    height: 80vh;
+    height: fit-content;
     margin: auto;
     background-color: white;
     padding: 20px;
@@ -39,6 +40,8 @@ div{
     padding-top: 15px;
     font-size: 2em;
     background-color: white;
+    font-weight: bold;
+    color: rgb(0, 77, 192);
 }
 footer{
     box-shadow: 1px -2px 5px rgba(0, 0, 0, 0.267);
