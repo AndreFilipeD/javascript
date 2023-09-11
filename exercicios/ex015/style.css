@@ -26,22 +26,17 @@ section{
     border-radius: 20px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.315);
 }
-section > div{
-    width: 200px;
+section > div > p{
+    width: 400px;
     margin: auto;
-}
-div#msg{
-    text-align: center;
-    font-size: 1.2em;
-    font-weight: bolder;
-    color: rgb(44, 44, 44);
-    padding-bottom: 20px;
+    padding: 5px;
 }
 footer{
     text-align: center;
     color: white;
     font-size: 0.7em;
     padding: 15px;
+    
 }
 h1 > a{
     text-decoration: none;

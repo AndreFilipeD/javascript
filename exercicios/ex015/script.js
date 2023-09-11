@@ -1,23 +1,46 @@
-function carregar(){
-    var msg = window.document.getElementById("msg")
-    var img = window.document.getElementById("imagem")
+function verificar(){
     var data = new Date()
-    var hora = data.getHours()
+    var ano = data.getFullYear()
+    var fano = document.getElementById('txtano')
+    var res = document.querySelector('div#res')
+    if(fano.value.length == 0 || fano.value > ano){
+        window.alert('[ERRO] Verifique os dados e tente novamente!!!')
+    }else{
+        var fsex = document.getElementsByName('radsex')
+        var idade = ano - Number(fano.value)
+        var genero = ''
 
-    msg.innerText = 'Agora são ' + hora + ' Horas'
+        var img = document.createElement('img')
+        img.setAttribute('id','foto')
 
-    if(hora >= 4 && hora <= 10){
-        img.src = 'imagens/manha.png'
-        document.body.style.background = '#e2ba85'
-
-    } else if (hora >= 11 && hora <= 16){
-        img.src = 'imagens/dia.png'
-        document.body.style.background = '#0077ff'
-    } else if (hora >=17 && hora <= 20){
-        img.src = 'imagens/tarde.png'
-        document.body.style.background = '#b9846f'
-    } else{
-        img.src = 'imagens/noite.png'
-        document.body.style.background = '#334e58'
+        if(fsex[0].checked){
+            genero = 'Homem'
+            if(idade >=0 && idade < 10){
+                img.setAttribute('src', 'imagens/bebe-h.png')
+            } else if(idade < 21){
+                img.setAttribute('src','imagens/jovem-h.png')
+            } else if(idade < 50){
+                img.setAttribute('src', 'imagens/adulto-h.png')
+            } else{
+                img.setAttribute('src', 'imagens/idoso-h.png')
+            }
+        }
+        else if(fsex[1].checked){
+            genero = 'Mulher'
+            if(idade >=0 && idade < 10){
+                img.setAttribute('src', 'imagens/bebe-m.png')
+            } else if(idade < 21){
+                img.setAttribute('src', 'imagens/jovem-m.png')
+            } else if(idade < 50){
+                img.setAttribute('src', 'imagens/adulto-m.png')
+            } else{
+                img.setAttribute('src', 'imagens/idoso-m.png')
+            }
+        }
+        res.innerHTML = 'Registrado ' + genero + ' com ' + idade + ' ano(s).'
+        res.style.textAlign = 'center'
+        res.appendChild(img)
+        img.style.padding = '20px'
     }
+    
 }
